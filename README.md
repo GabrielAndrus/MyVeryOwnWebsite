@@ -1,2 +1,2 @@
 # my-first-website
-Trying to learn react and css. Dipping my toes into frontend development. This will soon be it's own website -- will host all projects, research, etc.
+Trying to learn react. Dipping my toes into frontend development, plus having a website would be cool. 

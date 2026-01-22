@@ -1,0 +1,30 @@
+{
+  "name": "myveryownwebsite",
+  "version": "1.0.0",
+  "description": "Trying to learn react. Dipping my toes into frontend development, plus having a website would be cool.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GabrielAndrus/MyVeryOwnWebsite.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/GabrielAndrus/MyVeryOwnWebsite/issues"
+  },
+  "homepage": "https://github.com/GabrielAndrus/MyVeryOwnWebsite#readme",
+  "dependencies": {
+    "three": "^0.182.0",
+    "three-orbitcontrols": "^2.110.2",
+    "troika-three-text": "^0.52.4"
+  },
+  "devDependencies": {
+    "vite": "^7.3.1"
+  }
+}

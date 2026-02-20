@@ -1,5 +1,6 @@
-import * as THREE from 'three';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.module.js';
+import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.128.0/examples/jsm/controls/OrbitControls.js';
+import { DragControls } from 'https://cdn.jsdelivr.net/npm/three@0.128.0/examples/jsm/controls/DragControls.js';
 //import { Text } from 'https://cdn.jsdelivr.net/npm/troika-three-text@0.47.0/+esm';
 
 // Set up scene, camera, and renderer
@@ -10,7 +11,7 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
 
-// set up controls
+// set up OrbitControls.
 const controls = new OrbitControls(camera, renderer.domElement);
 
 // create canvas
@@ -55,6 +56,11 @@ const material = new THREE.MeshBasicMaterial({color: 0xFF10F0, map: bebeGebeText
 const dodecahedron = new THREE.Mesh(geometry, material);
 scene.add(dodecahedron);
 
+// initialize dragControls.
+const dragControls = new DragControls([dodecahedron], camera, renderer.domElement);
+dragControls.addEventListener('dragstart', () => controls.enabled = false);
+dragControls.addEventListener('dragend', () => controls.enabled = true);
+
 // hue/text effects
 let hue = 0;
 let textOffset = 0;
@@ -86,6 +92,7 @@ function animate() {
     context.fillText('welcome!', 256, 128);
     texture.needsUpdate = true; // Tell Three.js to update the texture
     controls.update(); // update the controls.
+    dragControls.update(); // update the dragControls.
 
     renderer.render(scene, camera);
 }

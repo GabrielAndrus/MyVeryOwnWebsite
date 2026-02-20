@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-//import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 //import { Text } from 'https://cdn.jsdelivr.net/npm/troika-three-text@0.47.0/+esm';
 
 // Set up scene, camera, and renderer
@@ -11,7 +11,7 @@ document.body.appendChild(renderer.domElement);
 
 
 // set up controls
-//const controls = new OrbitControls(camera, renderer.domElement);
+const controls = new OrbitControls(camera, renderer.domElement);
 
 // create canvas
 const canvas = document.createElement('canvas');
@@ -85,6 +85,7 @@ function animate() {
     context.textBaseline = 'middle';
     context.fillText('welcome!', 256, 128);
     texture.needsUpdate = true; // Tell Three.js to update the texture
+    controls.update(); // update the controls.
 
     renderer.render(scene, camera);
 }
